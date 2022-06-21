@@ -14,9 +14,9 @@ public class Homework2 {
         int ageChildren = 10;
         if (ageChildren < 6) {
             System.out.println("пошел с сад");
-        } else if (ageChildren >= 6 && ageChildren < 11) {
+        } else if (ageChildren < 11) {
             System.out.println("пошел в младшую школу");
-        } else if (ageChildren >= 11 && ageChildren < 17) {
+        } else if (ageChildren < 17) {
             System.out.println("пошел в среднюю школу");
         } else {
             System.out.println("пошел в университет");
@@ -35,9 +35,9 @@ public class Homework2 {
         boolean toast = true;
         boolean sausage = true;
         boolean eggs = true;
-        if (chicken && vegetables && sausage && toast) {
+        if (chicken && vegetables && sour && toast) {
             System.out.println("Цезарь");
-        } else if (chicken || sour && vegetables && eggs) {
+        } else if ((chicken || sausage) && vegetables && eggs) {
             System.out.println("Оливье");
         } else if (vegetables) {
             System.out.println("Овощной салат");
@@ -53,13 +53,13 @@ public class Homework2 {
         double increment = 0.01123;
         double result = 0;
         int count = 0;
-        do {
-            if (increment < 0)
+        while (result <= 1_000_000) {
+            if (result < 0) {
                 break;
+            }
             result += increment;
             count++;
-        }
-        while (result < 1_000_000);
+            }
         System.out.println(count);
         // Задание №2: Дан массив единиц, произвольной длины. Создать цикл, который заменяет каждый четный элемент на 0;
         // Например, дано: [1,1,1,1,1]
@@ -67,8 +67,8 @@ public class Homework2 {
         // Подсказка: прочитай про операнд "%".
         int[] array = {1, 2, 3, 4, 5};
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                array[i] = 0 * array[i];
+            if (i % 2 == 0) {
+                array[i] = 0;
             }
             System.out.print(array[i]);
         }
@@ -89,29 +89,28 @@ public class Homework2 {
         boolean hasMotorProblem = false;
         boolean hasTransmissionProblem = true;
         boolean hasWheelsProblem = true;
-        int sum =0;
-        if (hasFuel) {
+        double sum =0;
+        int countProblems = 0;
+        if (!hasFuel && (!hasMotorProblem && !hasTransmissionProblem && !hasWheelsProblem && !hasElectricsProblem)) {
             sum=1000;
-            System.out.println(sum);
         }   if (hasMotorProblem) {
-            sum = 10000;
-            System.out.println(sum);
+            sum += 10000;
+            countProblems += 1;
         }  if (hasElectricsProblem) {
-            sum = 5000;
-            System.out.println(sum);
+            sum += 5000;
+            countProblems += 1;
         }  if (hasTransmissionProblem) {
-            sum = 4000;
-            System.out.println(sum);
+            sum += 4000;
+            countProblems += 1;
         }   if (hasWheelsProblem) {
-            sum = 2000;
-            System.out.println(sum);
-        } else if (hasMotorProblem&&hasElectricsProblem||hasTransmissionProblem||hasWheelsProblem) {
-            sum = (int) (sum -0.1*sum);
-            System.out.println(sum);
-        } else if (hasTransmissionProblem && hasElectricsProblem || hasMotorProblem) {
-            sum = (int) (sum -0.2*sum);
-            System.out.println(sum);
+            sum += 2000;
+            countProblems += 1;
+        } else if (countProblems>=2) {
+            sum = 0.9*sum;
+        } else if (hasTransmissionProblem && (hasElectricsProblem || hasMotorProblem)) {
+            sum = 0.8*sum;
         }
+        System.out.println(sum);
         // Задание №4:
         // Написать систему управления складскими запасами. Создать класс склад, создать класс работники
         // (написать геттеры на все аттрибуты).
