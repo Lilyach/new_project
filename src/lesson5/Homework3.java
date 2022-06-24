@@ -45,10 +45,8 @@ public class Homework3  {
         // 4. Записать в файл "report.txt" данные из объекта класса.
         // Ожидаемый результат: в файле report.txt - одна строка: доходы = 500, расходы 300
         Financial_record financialRecord = new Financial_record();
-        int incomes = 500;
-        int outcomes = 300;
         FileWriter fileWriter = new FileWriter("C:\\Users\\Sony\\Desktop\\repos\\resource\\report.txt");
-        fileWriter.write("доходы = 500, расходы = 300");
+        fileWriter.write("доходы = " + Integer.toString(financialRecord.incomes) + " , расходы " + Integer.toString(financialRecord.outcomes));
         fileWriter.close();
 
     }

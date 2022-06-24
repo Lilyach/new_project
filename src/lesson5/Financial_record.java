@@ -1,8 +1,8 @@
 package lesson5;
 
 public class Financial_record {
-    int incomes;
-    int outcomes;
+    int incomes = 500;
+    int outcomes = 300;
 
     public Financial_record() {
         this.incomes = incomes;
