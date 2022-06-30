@@ -1,6 +1,6 @@
 package lesson5;
 
-public abstract class Cars {
+public abstract class Car {
     public void start() {
         System.out.println("начинает движение");
     }

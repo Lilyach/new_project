@@ -1,10 +1,10 @@
 package lesson5;
 
 public class Financial_record {
-    int incomes = 500;
-    int outcomes = 300;
+    private int incomes;
+    private int outcomes;
 
-    public Financial_record() {
+    public Financial_record(int incomes, int outcomes) {
         this.incomes = incomes;
         this.outcomes = outcomes;
     }
@@ -23,5 +23,10 @@ public class Financial_record {
 
     public void setOutcomes(int outcomes) {
         this.outcomes = outcomes;
+    }
+
+    @Override
+    public String toString() {
+        return this.incomes + ";" + this.outcomes;
     }
 }
