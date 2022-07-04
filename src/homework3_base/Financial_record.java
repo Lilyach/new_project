@@ -1,4 +1,4 @@
-package lesson5;
+package homework3_base;
 
 public class Financial_record {
     private int incomes;

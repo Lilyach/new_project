@@ -1,4 +1,4 @@
-package lesson5;
+package homework3_base;
 
 import java.io.*;
 import java.util.Random;
